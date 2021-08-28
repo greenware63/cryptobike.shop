@@ -1,0 +1,96 @@
+
+/*upload goods form decoration*/
+
+.wrap{
+    display: flex;
+    flex-direction: row;
+    direction: rtl;
+    width: available;
+    height: available;
+}
+.upload{
+    direction: rtl;
+    position: relative;
+    margin-right: 10px;
+    margin-top: 10px;
+    width:500px;
+
+
+}
+
+.upload form label{
+    position: absolute;
+    left: 130px;
+    width:140px;
+    background-color:#f8d7da;
+    border-radius: 5px;
+    padding:5px;
+    visibility: hidden;
+
+}
+.upload input[type='file']{
+    display: none;
+
+}
+.upload form button{
+    padding: 10px;
+    background-color:#8FC4E8 ;
+    border-radius: 5px;
+    width:fit-content;
+
+}
+
+.upload-img{
+    display: flex;
+    flex-direction: row;
+    direction: rtl;
+    align-items:baseline;
+    margin-bottom:8px;
+}
+.fa-upload{
+    margin-right:2px ;
+    opacity: 50%;
+}
+
+.fa-upload:hover{
+    opacity: 100%;
+    cursor: pointer;
+}
+
+
+
+.upload form input{
+    width: fit-content;
+    margin-bottom: 5px;
+    border: 2px solid #eeeeee;
+    font-size: 18px;
+    border-radius: 5px;
+    outline: none;
+}
+
+datalist {
+    direction: rtl;
+}
+
+.uploaded
+{
+    border: 5px dashed #eeee ;
+    padding: 10px;
+
+}
+
+.uploaded-txt
+{
+    position: relative;
+    border: 5px dashed #eeee ;
+    padding: 10px;
+    background-color:#8FC4E8;
+    width: 300px;
+    margin-right: 10px;
+    font-weight: bold;
+    font-family:"B Nazanin";
+    font-size: 18px;
+    color: white;
+    text-align:right;
+
+}

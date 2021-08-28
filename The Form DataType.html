@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<form id="fibo-form">
+<input type="number" placeholder="write a number " id="fibo-number"><br>
+  <input type="button" value="Calculate Fibo" id="btnFibo">
+</form>
+<div id="status"></div>
+<script>
+  number=0;
+if($(document).ready(function (){
+  $('#btnFibo').click(function (){
+   number=$('#fibo-number').val();
+
+   //
+    let data= new FormData();
+    data.append("number",number);
+
+    let xhr= new XMLHttpRequest();
+    xhr.addEventListener('readystatechange',()=>{
+      if(xhr.readyState==4)
+      {
+        if((xhr.status>=200 && xhr.status<300||xhr.status==304))
+        {
+          document.write(xhr.responseText+"<br>"+xhr.getAllResponseHeaders());
+
+        }
+        else
+        {
+          document.write("request was not successful")
+        }
+      }
+
+    });
+    xhr.open("POST","http://cryptobike.shop/ResponseAscyncRequest.php",true);
+    xhr.withCredentials;
+    xhr.send(data);
+
+    xhr.onprogress = function(event) {
+      let divStatus = document.getElementById("status");
+      if (event.lengthComputable) {
+        divStatus.innerHTML = "Received " + event.position + " of " +
+                event.totalSize +
+                " bytes";
+      }
+
+    }
+
+////////
+    $(document).ready(function(){
+      alert("ok");
+    })
+
+
+
+  });
+}));
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
